@@ -2,9 +2,9 @@
     --panel-width: min(500px, 100vw);
 }
 
-/* --- Design Tokens --- */
+
 :root {
-    /* Dark Theme (Default) */
+    
     --bg-color: #0a0a0a;
     --text-main: #ffffff;
     --text-dim: #b0b0b0;
@@ -16,9 +16,9 @@
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Light Mode Overrides */
+
 body.light-mode {
-    --bg-color: #fcf9f2; /* Creamy warm background */
+    --bg-color: #fcf9f2; 
     --text-main: #1a1a1a;
     --text-dim: #4a4a4a;
     --accent-gold: #b38b00;
@@ -28,7 +28,7 @@ body.light-mode {
     --overlay-color: rgba(255, 255, 255, 0.2);
 }
 
-/* --- Base Styles --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -48,7 +48,7 @@ body {
     transition: background-color 0.5s ease;
 }
 
-/* --- Navigation --- */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -82,7 +82,7 @@ body {
 
 body.dark-mode .icon-sun, body.light-mode .icon-moon { display: none; }
 
-/* --- Hero Section --- */
+
 .hero {
     position: relative;
     height: 100vh;
@@ -111,7 +111,7 @@ body.dark-mode .icon-sun, body.light-mode .icon-moon { display: none; }
     left: 0;
 }
 
-/* Background Visibility Logic */
+
 body.light-mode .hero-video { display: none; }
 body.dark-mode .fallback-img { opacity: 0; }
 
@@ -122,7 +122,7 @@ body.dark-mode .fallback-img { opacity: 0; }
     backdrop-filter: blur(2px);
 }
 
-/* --- Hero Content --- */
+
 .hero-content {
     max-width: 800px;
     z-index: 1;
@@ -144,7 +144,7 @@ body.dark-mode .fallback-img { opacity: 0; }
     margin-bottom: 3rem;
 }
 
-/* --- Buttons --- */
+
 .cta-group {
     display: flex;
     flex-direction: column;
@@ -190,7 +190,7 @@ body.dark-mode .fallback-img { opacity: 0; }
     transform: translateY(-2px);
 }
 
-/* --- Responsiveness --- */
+
 @media (max-width: 768px) {
     .secondary-btns {
         flex-direction: column;
@@ -202,7 +202,7 @@ body.dark-mode .fallback-img { opacity: 0; }
         text-align: center;
     }
 }
-/* --- Side Panels (Glassmorphism) --- */
+
 .side-panel {
     position: fixed;
     top: 0;
