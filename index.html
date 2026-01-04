@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Premium Developer</title>
+    <meta name="description" content="Senior Front-end Engineer Portfolio - Cinematic Design">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode"> 
+    <header class="navbar">
+        <div class="logo">PORTFOLIO</div>
+        <nav>
+            <button id="theme-toggle" aria-label="Toggle light/dark mode">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-bg-container">
+                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&q=80&w=2000" 
+                     alt="Taj Mahal at Sunrise" 
+                     class="fallback-img"
+                     id="hero-image">
+                
+                <video autoplay muted loop playsinline 
+                       poster="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&q=80&w=2000" 
+                       class="hero-video" 
+                       id="hero-video">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-taj-mahal-at-sunrise-4395-large.mp4" type="video/mp4">
+                </video>
+                <div class="overlay"></div>
+            </div>
+
+            <div class="hero-content">
+                <h1 class="name">Sumit Shejole</h1>
+                <p class="role">life time learner Engineering student  </p>
+                
+                <div class="cta-group">
+                    <button id="open-projects" class="btn btn-primary">View Projects</button>
+                    <div class="secondary-btns">
+                        <button id="open-contact" class="btn btn-glass">Contact</button>
+                        <a href="resume.pdf" class="btn btn-glass" target="_blank">Resume</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside id="panel-projects" class="side-panel">
+        <button class="close-btn" aria-label="Close panel">&times;</button>
+        <div class="panel-inner">
+            <h2 class="panel-title">Projects</h2>
+            <div class="project-list">
+
+  <div class="project-card">
+    <h3>Coding Protocol</h3>
+
+    <p>
+      A smart internship & placement platform with separate student and admin dashboards.
+      Includes application forms, admin control panel, and role-based access.
+    </p>
+
+    <div class="tech-stack">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Firebase</span>
+    </div>
+
+    <div class="project-links">
+      <a href="https://coding-protocol-edf72.web.app/" target="_blank">
+        Student Demo
+      </a>
+
+      <a href="https://coding-protocol-edf72.web.app/admin-login.html" target="_blank">
+        Admin Panel
+      </a>
+
+      <a href="https://github.com/shejolesumesh/coding-protocol" target="_blank">
+        GitHub
+      </a>
+    </div>
+  </div>
+
+</div>
+
+        </div>
+    </aside>
+
+    <aside id="panel-contact" class="side-panel">
+        <button class="close-btn" aria-label="Close panel">&times;</button>
+        <div class="panel-inner">
+            <h2 class="panel-title">Get In Touch</h2>
+            <div class="contact-links">
+                <a href="mailto:shejolesumesh@gmail.com" class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <div class="contact-text">
+                        <small>Email</small>
+                        <span>shejolesumesh@gmail.com</span>
+                    </div>
+                </a>
+                <a href="tel:+1234567890" class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div class="contact-text">
+                        <small>Phone</small>
+                        <span>+91 8827503016</span>
+                    </div>
+                </a>
+                <a href="https://github.com/shejolesumesh" target="_blank" class="contact-item">
+                    <span class="contact-icon">💻</span>
+                    <div class="contact-text">
+                        <small>GitHub</small>
+                        <span>github.com/profile</span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/sumit-shejole" target="_blank" class="contact-item">
+                    <span class="contact-icon">🔗</span>
+                    <div class="contact-text">
+                        <small>LinkedIn</small>
+                        <span>linkedin.com/in/profile</span>
+                    </div>
+                </a>
+                <a href="https://wa.me/8827503016" target="_blank" class="contact-item">
+                    <span class="contact-icon">💬</span>
+                    <div class="contact-text">
+                        <small>WhatsApp</small>
+                        <span>Chat with me</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>

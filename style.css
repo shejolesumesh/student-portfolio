@@ -1,0 +1,227 @@
+:root {
+    /* existing vars... */
+    --panel-width: 500px;
+}
+
+/* --- Design Tokens --- */
+:root {
+    /* Dark Theme (Default) */
+    --bg-color: #0a0a0a;
+    --text-main: #ffffff;
+    --text-dim: #b0b0b0;
+    --accent-gold: #d4af37;
+    --accent-glow: rgba(212, 175, 55, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --overlay-color: rgba(0, 0, 0, 0.5);
+    --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+    --bg-color: #fcf9f2; /* Creamy warm background */
+    --text-main: #1a1a1a;
+    --text-dim: #4a4a4a;
+    --accent-gold: #b38b00;
+    --accent-glow: rgba(179, 139, 0, 0.2);
+    --glass-bg: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --overlay-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease;
+}
+
+/* --- Navigation --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--glass-border);
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+body.dark-mode .icon-sun, body.light-mode .icon-moon { display: none; }
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-video, .fallback-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Background Visibility Logic */
+body.light-mode .hero-video { display: none; }
+body.dark-mode .fallback-img { opacity: 0; }
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-color);
+    backdrop-filter: blur(2px);
+}
+
+/* --- Hero Content --- */
+.hero-content {
+    max-width: 800px;
+    z-index: 1;
+}
+
+.name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.role {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: var(--text-dim);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+/* --- Buttons --- */
+.cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--accent-gold), #e6c65d);
+    color: #000;
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--accent-glow);
+}
+
+.secondary-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-glass {
+    background: var(--glass-bg);
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+}
+
+.btn-glass:hover {
+    background: var(--glass-border);
+    transform: translateY(-2px);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+    .secondary-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* --- Side Panels (Glassmorphism) --- */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: var(--panel-width);
+    height: 100%;
+    z-index: 2000;
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px) saturate(160%);
+    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    border-left: 1px solid var(--glass-border);
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 4rem 2rem;
+    overflow-y: auto;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+}
+.side-panel.active {
+    transform: translateX(0);
+}
+
