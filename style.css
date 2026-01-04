@@ -1,7 +1,7 @@
 :root {
-    /* existing vars... */
-    --panel-width: 500px;
+    --panel-width: min(500px, 100vw);
 }
+
 
 /* --- Design Tokens --- */
 :root {
@@ -224,3 +224,37 @@ body.dark-mode .fallback-img { opacity: 0; }
 .side-panel.active {
     transform: translateX(0);
 }
+@media (max-width: 768px) {
+
+  .side-panel {
+    width: 100vw;
+    height: 100dvh;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    padding: 3.5rem 1.25rem 2rem;
+    border-left: none;
+    border-top: 1px solid var(--glass-border);
+
+    transform: translateY(100%);
+  }
+
+  .side-panel.active {
+    transform: translateY(0);
+  }
+
+  .close-btn {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    font-size: 2rem;
+    z-index: 3000;
+  }
+
+  .panel-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
